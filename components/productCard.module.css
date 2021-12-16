@@ -1,0 +1,11 @@
+.productCard {
+  border: none;
+  opacity: 0.8;
+  border: 1px solid transparent;
+  transition: all 250ms ease-in;
+}
+
+.productCard:hover {
+  opacity: 1;
+  border-color: var(--bs-secondary);
+}
