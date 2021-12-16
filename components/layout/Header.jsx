@@ -7,11 +7,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import styles from './header.module.css';
-import {
-  Cart as ShoppingCardIcon,
-  Person as PersonIcon,
-} from 'react-bootstrap-icons';
+import { Person as PersonIcon } from 'react-bootstrap-icons';
 import { Searchbar } from '../searchbar/Searchbar';
+import { ShoppingCart } from '../shoppingCart/ShoppingCart';
 
 export const Header = (props) => {
   const productsDropdowns = categories.map((category) => (
@@ -45,9 +43,7 @@ export const Header = (props) => {
               <PersonIcon fontSize={20} />
             </Button>
           </Link>
-          <Button variant="none" className={styles.iconButton}>
-            <ShoppingCardIcon fontSize={20} />
-          </Button>
+          <ShoppingCart />
         </ButtonGroup>
       </Container>
     </Navbar>
