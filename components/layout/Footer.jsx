@@ -1,10 +1,7 @@
 export const Footer = (props) => {
   return (
-    <footer>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum
-        voluptatibus.
-      </p>
+    <footer className="p-1 bg-dark text-white">
+      <p className="text-center">Copyright &copy; 2021 - Shopit. </p>
     </footer>
   );
 };
