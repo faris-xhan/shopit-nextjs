@@ -1,10 +1,13 @@
 import categories from '../../mock/categories.json';
 import Container from 'react-bootstrap/Container';
+import { Banner } from '../../components/Banner';
+import { ProductList } from '../../components/ProductsList';
 
 const Category = ({ category }) => {
   return (
     <Container>
-      <h1>{category}</h1>
+      <Banner title={category} />
+      <ProductList products={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13]} />
     </Container>
   );
 };

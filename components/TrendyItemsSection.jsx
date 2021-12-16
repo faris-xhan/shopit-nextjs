@@ -4,15 +4,8 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import { ProductCard } from './ProductCard';
+import { ProductList } from './ProductsList';
 
-const product = {
-  id: 1,
-  title: 'Lorem ipsum dolor sit amet consectetur.',
-  isSale: true,
-  oldPrice: 1000,
-  price: 500,
-  mediaSrc: '/assets/images/products/product.jpg',
-};
 export const TrendyItemsSection = (props) => {
   const [selectedItem, setSelectedItem] = useState('handbags');
 
@@ -38,15 +31,7 @@ export const TrendyItemsSection = (props) => {
           <Nav.Link eventKey="jwellery">Jwellery</Nav.Link>
         </Nav.Item>
       </Nav>
-      <Container className="p-2">
-        <Row>
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-            <Col xs={6} md={4} xl={3} key={item} className="p-1 ">
-              <ProductCard product={product} />
-            </Col>
-          ))}
-        </Row>
-      </Container>
+      <ProductList products={[1, 2, 3, 4, 5, 6, 7, 8]} />
     </Container>
   );
 };
