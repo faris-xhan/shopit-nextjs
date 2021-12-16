@@ -7,7 +7,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import styles from './header.module.css';
-import { Cart, Person, Search } from 'react-bootstrap-icons';
+import {
+  Cart as ShoppingCardIcon,
+  Person as PersonIcon,
+} from 'react-bootstrap-icons';
+import { Searchbar } from '../searchbar/Searchbar';
 
 export const Header = (props) => {
   const productsDropdowns = categories.map((category) => (
@@ -35,14 +39,14 @@ export const Header = (props) => {
           </Link>
         </div>
         <ButtonGroup>
+          <Searchbar />
+          <Link href="/login" passHref>
+            <Button variant="none" className={styles.iconButton}>
+              <PersonIcon fontSize={20} />
+            </Button>
+          </Link>
           <Button variant="none" className={styles.iconButton}>
-            <Search fontSize={20} />
-          </Button>
-          <Button variant="none" className={styles.iconButton}>
-            <Person fontSize={20} />
-          </Button>
-          <Button variant="none" className={styles.iconButton}>
-            <Cart fontSize={20} />
+            <ShoppingCardIcon fontSize={20} />
           </Button>
         </ButtonGroup>
       </Container>
