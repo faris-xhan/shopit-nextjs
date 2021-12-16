@@ -1,0 +1,6 @@
+.item {
+  transition: transform 200ms ease-in-out;
+}
+.item:hover {
+  transform: scale(1.1);
+}
