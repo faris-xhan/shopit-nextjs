@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SSRProvider from 'react-bootstrap/SSRProvider';
 import Head from 'next/head';
+import { Layout } from '../components/layout/Layout';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -9,7 +10,9 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Shopit - Buy what you love.</title>
       </Head>
-      <Component {...pageProps} />;
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </SSRProvider>
   );
 }
