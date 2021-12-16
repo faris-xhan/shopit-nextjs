@@ -1,0 +1,56 @@
+[
+  {
+    "img": "/assets/images/banners/footwear.jpg",
+    "id": 1,
+    "link": "category/footwear",
+    "name": "footwear"
+  },
+  {
+    "img": "/assets/images/banners/glasses.jpg",
+    "id": 2,
+    "link": "category/glasses",
+    "name": "glasses"
+  },
+  {
+    "img": "/assets/images/banners/gloves.jpg",
+    "id": 3,
+    "link": "category/gloves",
+    "name": "gloves"
+  },
+  {
+    "img": "/assets/images/banners/handbags.jpg",
+    "id": 4,
+    "link": "category/handbags",
+    "name": "handbags"
+  },
+  {
+    "img": "/assets/images/banners/jewellery.jpg",
+    "id": 5,
+    "link": "category/jewellery",
+    "name": "jewellery"
+  },
+  {
+    "img": "/assets/images/banners/sale.jpg",
+    "id": 6,
+    "link": "category/sale",
+    "name": "sale"
+  },
+  {
+    "img": "/assets/images/banners/laptop_bags.jpg",
+    "id": 7,
+    "link": "category/laptop_bags",
+    "name": "laptop_bags"
+  },
+  {
+    "img": "/assets/images/banners/shoulder_straps.jpg",
+    "id": 8,
+    "link": "category/shoulder_straps",
+    "name": "shoulder_straps"
+  },
+  {
+    "img": "/assets/images/banners/wallet.jpg",
+    "id": 9,
+    "link": "category/wallet",
+    "name": "wallet"
+  }
+]
