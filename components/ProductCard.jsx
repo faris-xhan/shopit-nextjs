@@ -6,9 +6,9 @@ import { CartFill, Eye } from 'react-bootstrap-icons';
 import Link from 'next/link';
 
 export const ProductCard = (props) => {
-  const { product } = props;
+  const { product, ...rest } = props;
   return (
-    <Card className={styles.productCard}>
+    <Card className={styles.productCard} {...rest}>
       <Card.Img variant="top" src={product.mediaSrc} />
       <Card.Body>
         <Card.Title>{product.title}</Card.Title>
