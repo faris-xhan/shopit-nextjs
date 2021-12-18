@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { List as ListIcon } from 'react-bootstrap-icons';
 import Button from 'react-bootstrap/Button';
+import { DrawerMenu } from './DrawerMenu';
 
 export const Drawer = (props) => {
   const [show, setShow] = useState(false);
@@ -18,7 +19,9 @@ export const Drawer = (props) => {
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Shopit</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>Drawer Menus will come here.</Offcanvas.Body>
+        <Offcanvas.Body>
+          <DrawerMenu />
+        </Offcanvas.Body>
       </Offcanvas>
     </>
   );
