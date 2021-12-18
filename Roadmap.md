@@ -1,4 +1,4 @@
-# Create `create product page for admin'
+# [x] Create `create product page for admin'
 
 # Create `edit product page for admin`
 

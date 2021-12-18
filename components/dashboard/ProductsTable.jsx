@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Table from 'react-bootstrap/Table';
 
 export const ProductsTable = (props) => {
@@ -12,14 +13,17 @@ export const ProductsTable = (props) => {
         </tr>
       </thead>
       <tbody>
-        {rows.map((rowData, idx) => (
-          <tr key={idx}>{createRowCells(rowData)}</tr>
+        {rows.map((row) => (
+          <tr key={row.id}>
+            <td>
+              <Link href={`/products/${row.id}`}>{row.title}</Link>
+            </td>
+            <td>{row.category}</td>
+            <td>{row.price}</td>
+            <td>{row.quantity}</td>
+          </tr>
         ))}
       </tbody>
     </Table>
   );
-};
-
-const createRowCells = (data) => {
-  return Object.entries(data).map(([key, val]) => <td key={key}>{val}</td>);
 };
