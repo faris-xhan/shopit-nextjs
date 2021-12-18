@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import { ProductCard } from './ProductCard';
 import { ProductList } from './ProductsList';
 
-export const TrendyItemsSection = (props) => {
+export const TrendyItemsSection = ({ products }) => {
   const [selectedItem, setSelectedItem] = useState('handbags');
 
   return (
@@ -31,7 +31,7 @@ export const TrendyItemsSection = (props) => {
           <Nav.Link eventKey="jwellery">Jwellery</Nav.Link>
         </Nav.Item>
       </Nav>
-      <ProductList products={[1, 2, 3, 4, 5, 6, 7, 8]} />
+      <ProductList products={products} />
     </Container>
   );
 };

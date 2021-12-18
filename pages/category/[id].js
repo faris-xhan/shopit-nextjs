@@ -2,12 +2,13 @@ import categories from '../../mock/categories.json';
 import Container from 'react-bootstrap/Container';
 import { Banner } from '../../components/Banner';
 import { ProductList } from '../../components/ProductsList';
+import axios from 'axios';
 
-const Category = ({ category }) => {
+const Category = ({ category, data }) => {
   return (
     <Container>
       <Banner title={category} />
-      <ProductList products={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13]} />
+      <ProductList products={data} />
     </Container>
   );
 };
@@ -24,9 +25,17 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps = async ({ params }) => {
+  let data = [];
+  try {
+    const response = await axios.get('http://localhost:3030/product');
+    data = response.data.data?.filter((d) => d.category === params.id);
+  } catch (error) {
+    console.error(error);
+  }
   return {
     props: {
       category: params.id,
+      data,
     },
   };
 };
