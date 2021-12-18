@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import categories from '../../mock/categories.json';
 import Link from 'next/link';
 import Nav from 'react-bootstrap/Nav';
@@ -10,8 +11,18 @@ import styles from './header.module.css';
 import { Person as PersonIcon } from 'react-bootstrap-icons';
 import { Searchbar } from '../searchbar/Searchbar';
 import { ShoppingCart } from '../shoppingCart/ShoppingCart';
+import { Drawer } from '../dashboard/Drawer';
+import { UserMenu } from '../dashboard/UserMenu';
 
 export const Header = (props) => {
+  const { pathname } = useRouter();
+
+  const dashboard = pathname.includes('dashboard');
+
+  return dashboard ? <DashboardNavbar /> : <PublicNavbar />;
+};
+
+const PublicNavbar = (props) => {
   const productsDropdowns = categories.map((category) => (
     <Link key={category.id} href={category.link} passHref>
       <NavDropdown.Item>{category.title}</NavDropdown.Item>
@@ -45,6 +56,20 @@ export const Header = (props) => {
           </Link>
           <ShoppingCart />
         </ButtonGroup>
+      </Container>
+    </Navbar>
+  );
+};
+
+const DashboardNavbar = (props) => {
+  return (
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Drawer />
+        <Link href="/" passHref>
+          <Navbar.Brand href="#home">Shopit</Navbar.Brand>
+        </Link>
+        <UserMenu className={styles.iconButton} />
       </Container>
     </Navbar>
   );
